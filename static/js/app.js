@@ -1,3 +1,5 @@
+// by Christopher Madden
+
 // from data.js
 const tableData = data;
 // get table references
@@ -19,26 +21,22 @@ function buildTable(data) {
   });
 }
 
-// 1. Create a "variable" to keep track of all the "filters" as an object. Create an "empty filters variable" to keep track of all the elements that change when a search is entered. 
-// This variable will be used in Step 5 to store the property “id” and the value that was entered from user input.
+// 1. Create a "variable" to keep track of all the "filters" as an object.
 var filters = [];
 
-// 3. Use this function to update the filters. Inside this function, you’ll write code in Steps 4-5 to update the filters based on user input.
+// 3. Use this function to update the filters.
 function updateFilters() {
 
-    // 4a. Save the element that was changed as a variable. Create a variable that saves the "changed element" using d3.select(this).
-    // https://website.education.wisc.edu/~swu28/d3t/concept.html
+    // 4a. Save the element that was changed as a variable.
     let changedElement = d3.select(this);
-    // 4b. Save the value that was changed as a variable. Create a variable that saves the "value of the changed element’s property".
+    // 4b. Save the value that was changed as a variable.
     let elementValue = changedElement.property("value");
     console.log(elementValue);
-    // 4c. Save the id of the filter that was changed as a variable. Create a variable that saves the "attribute of the changed element’s id".
+    // 4c. Save the id of the filter that was changed as a variable.
     let filterId = changedElement.attr("id");
     console.log(filterId);
-    // 5. If a filter value was entered then add that "filterId" and value to the filters list. Otherwise, clear that filter from the filters object. 
-    // Write an if-else statement that checks if a value was changed by the user elementValue. 
-    // If a value was changed, add the element’s id, filterId, as the property and the value that was changed to the var filters. 
-    // If a value was not entered, then clear the element id from the filters variable.
+    // 5. If a filter value was entered then add that filterId and value
+    // to the filters list. Otherwise, clear that filter from the filters object.
     if (elementValue) {
       filters[filterId]=elementValue;
     }
@@ -55,7 +53,8 @@ function updateFilters() {
     // 8. Set the "filtered data" to the "tableData".
     let filteredData = tableData;
  
-    // 9. Loop through all of the filters and keep any data that matches the filter values (from module)
+    // 9. Loop through all of the filters and keep any data that
+    // matches the filter values
     Object.entries(filters).forEach(([key,value])=> {
       filteredData =  filteredData.filter(row => row[key]=== value);
     });  
@@ -64,8 +63,7 @@ function updateFilters() {
     buildTable(filteredData);    
   }
   
-  // 2. Attach an event to listen for changes to each filter; from module: d3.selectAll("#filter-btn").on("click", handleClick); 
-  // Modify the event listener to "change" on each "input" element and calls the "updateFilters() function".
+  // 2. Attach an event to listen for changes to each filter.
   d3.selectAll("input").on("change",updateFilters);
   
   // Build the table when the page loads
