@@ -24,7 +24,7 @@ When first visiting the page, you can see the five filters on the left:
 
 ![Bottom of Page](https://github.com/maddenc33/UFOs/blob/main/static/images/bottom.PNG)
 
-Here is an example of the filters in use.  By simply typing the desired date into the date search box, you can filter for only that date, as seen below:
+Here is an example of the filters in use.  By simply typing the desired date into the date search box, you can filter for only that date, as seen below.  Please note that the exact same type of date formatting must be used.
 
 ![Pic 3](https://github.com/maddenc33/UFOs/blob/main/static/images/date.PNG)
 
