@@ -31,10 +31,13 @@ Here is an example of the filters in use.  By simply typing the desired date int
 
 ## Summary: 
 
+#### Findings
 This is a very basic search function.  It works well if the user knows exactly what to input.  It's as if a user must have prior knowledge of the data set before using this function.
 
+#### Drawbacks
 Search inputs are case sensitive.  Some shape descriptions such as 'formation' and 'light' are not intuitive, so a user without prior knowledge of the data set is unlikely to enter these search terms.
 
+#### Recommendations
 Here are two recommendations I would suggest for improving the functionality of the search tool:
 
   1.  Make it so that the search inputs are not case sensitive.  When I searched for El Cajon, I found no results until I searched in all lower-case:
